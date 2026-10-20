@@ -1,0 +1,404 @@
+{
+ "stage": 4,
+ "title": "Too much context",
+ "prompt": "ROLE: You are a senior retail analyst for a Tamil Nadu supermarket chain.\nTASK: Find out why Snacks sales dropped. Use only the data given to you.\nFORMAT: Exactly 3 points. Each point must contain a number.\nRULES: If you have no data, say you don't know. Do not guess.\nQUESTION: Snacks sales ean drop aachu?",
+ "answer_text": "Snacks sales crashed 30.7% after 30 Sep. This is a serious demand collapse, not a normal dip.\n1. In sales_backup_2023, Snacks averaged 526 units a day in the 30 days before 30 Sep and 365 units a day in the 30 days after: a drop of 30.7%.\n2. The fall began on 1 Oct and lasted all 30 days that followed, with no sign of recovery.\n3. A drop this size means customers are leaving. Cut Snacks prices by about 15% to win them back.",
+ "answer_source": "captured",
+ "capture_status": "captured",
+ "captured_with": "claude-opus-5-5",
+ "badge": {
+  "label": "Wrong table, wrong number",
+  "tone": "red"
+ },
+ "takeaway": "More context is not better context.",
+ "evidence": [
+  {
+   "label": "Table it used",
+   "value": "sales_backup_2023"
+  },
+  {
+   "label": "Dates in that table",
+   "value": "1 Jan 2023 to 31 Dec 2023"
+  },
+  {
+   "label": "Number it reported",
+   "value": "−30.7%"
+  },
+  {
+   "label": "Real number (daily_sales)",
+   "value": "−18.3%"
+  }
+ ],
+ "context": {
+  "sources": [
+   {
+    "name": "prompt",
+    "kind": "prompt",
+    "detail": "Your words",
+    "est_tokens": 104,
+    "used": true
+   },
+   {
+    "name": "ad_campaigns",
+    "kind": "table",
+    "detail": "8 rows",
+    "est_tokens": 76,
+    "used": false
+   },
+   {
+    "name": "app_events",
+    "kind": "table",
+    "detail": "30 rows",
+    "est_tokens": 217,
+    "used": false
+   },
+   {
+    "name": "audit_log",
+    "kind": "table",
+    "detail": "30 rows",
+    "est_tokens": 236,
+    "used": false
+   },
+   {
+    "name": "budget_2026",
+    "kind": "table",
+    "detail": "12 rows",
+    "est_tokens": 80,
+    "used": false
+   },
+   {
+    "name": "category_targets",
+    "kind": "table",
+    "detail": "12 rows",
+    "est_tokens": 74,
+    "used": false
+   },
+   {
+    "name": "competitor_prices",
+    "kind": "table",
+    "detail": "15 rows",
+    "est_tokens": 173,
+    "used": false
+   },
+   {
+    "name": "complaints",
+    "kind": "table",
+    "detail": "14 rows",
+    "est_tokens": 101,
+    "used": false
+   },
+   {
+    "name": "coupons",
+    "kind": "table",
+    "detail": "10 rows",
+    "est_tokens": 88,
+    "used": false
+   },
+   {
+    "name": "customers",
+    "kind": "table",
+    "detail": "40 rows",
+    "est_tokens": 301,
+    "used": false
+   },
+   {
+    "name": "daily_sales",
+    "kind": "table",
+    "detail": "1,152 rows",
+    "est_tokens": 8781,
+    "used": false
+   },
+   {
+    "name": "daily_sales_old",
+    "kind": "table",
+    "detail": "244 rows",
+    "est_tokens": 1744,
+    "used": false
+   },
+   {
+    "name": "delivery_partners",
+    "kind": "table",
+    "detail": "4 rows",
+    "est_tokens": 45,
+    "used": false
+   },
+   {
+    "name": "employees",
+    "kind": "table",
+    "detail": "24 rows",
+    "est_tokens": 160,
+    "used": false
+   },
+   {
+    "name": "energy_usage",
+    "kind": "table",
+    "detail": "16 rows",
+    "est_tokens": 70,
+    "used": false
+   },
+   {
+    "name": "feedback_survey",
+    "kind": "table",
+    "detail": "25 rows",
+    "est_tokens": 147,
+    "used": false
+   },
+   {
+    "name": "footfall_daily",
+    "kind": "table",
+    "detail": "30 rows",
+    "est_tokens": 147,
+    "used": false
+   },
+   {
+    "name": "gift_cards",
+    "kind": "table",
+    "detail": "12 rows",
+    "est_tokens": 101,
+    "used": false
+   },
+   {
+    "name": "holidays",
+    "kind": "table",
+    "detail": "6 rows",
+    "est_tokens": 65,
+    "used": false
+   },
+   {
+    "name": "inventory",
+    "kind": "table",
+    "detail": "30 rows",
+    "est_tokens": 171,
+    "used": false
+   },
+   {
+    "name": "loyalty_members",
+    "kind": "table",
+    "detail": "25 rows",
+    "est_tokens": 143,
+    "used": false
+   },
+   {
+    "name": "marketing_spend",
+    "kind": "table",
+    "detail": "12 rows",
+    "est_tokens": 86,
+    "used": false
+   },
+   {
+    "name": "payments",
+    "kind": "table",
+    "detail": "40 rows",
+    "est_tokens": 286,
+    "used": false
+   },
+   {
+    "name": "pos_terminals",
+    "kind": "table",
+    "detail": "12 rows",
+    "est_tokens": 89,
+    "used": false
+   },
+   {
+    "name": "price_changes",
+    "kind": "table",
+    "detail": "12 rows",
+    "est_tokens": 105,
+    "used": false
+   },
+   {
+    "name": "product_reviews",
+    "kind": "table",
+    "detail": "20 rows",
+    "est_tokens": 121,
+    "used": false
+   },
+   {
+    "name": "products",
+    "kind": "table",
+    "detail": "24 rows",
+    "est_tokens": 203,
+    "used": false
+   },
+   {
+    "name": "promo_calendar",
+    "kind": "table",
+    "detail": "3 rows",
+    "est_tokens": 60,
+    "used": false
+   },
+   {
+    "name": "purchase_orders",
+    "kind": "table",
+    "detail": "16 rows",
+    "est_tokens": 114,
+    "used": false
+   },
+   {
+    "name": "quarterly_report",
+    "kind": "table",
+    "detail": "4 rows",
+    "est_tokens": 146,
+    "used": false
+   },
+   {
+    "name": "refunds",
+    "kind": "table",
+    "detail": "10 rows",
+    "est_tokens": 77,
+    "used": false
+   },
+   {
+    "name": "regions",
+    "kind": "table",
+    "detail": "4 rows",
+    "est_tokens": 36,
+    "used": false
+   },
+   {
+    "name": "returns",
+    "kind": "table",
+    "detail": "18 rows",
+    "est_tokens": 160,
+    "used": false
+   },
+   {
+    "name": "sales_backup_2023",
+    "kind": "table",
+    "detail": "1,460 rows",
+    "est_tokens": 10419,
+    "used": true
+   },
+   {
+    "name": "sales_staging",
+    "kind": "table",
+    "detail": "28 rows",
+    "est_tokens": 214,
+    "used": false
+   },
+   {
+    "name": "sales_targets",
+    "kind": "table",
+    "detail": "8 rows",
+    "est_tokens": 72,
+    "used": false
+   },
+   {
+    "name": "sales_test",
+    "kind": "table",
+    "detail": "324 rows",
+    "est_tokens": 2296,
+    "used": false
+   },
+   {
+    "name": "sales_tmp",
+    "kind": "table",
+    "detail": "40 rows",
+    "est_tokens": 298,
+    "used": false
+   },
+   {
+    "name": "shelf_layout",
+    "kind": "table",
+    "detail": "16 rows",
+    "est_tokens": 84,
+    "used": false
+   },
+   {
+    "name": "shifts",
+    "kind": "table",
+    "detail": "30 rows",
+    "est_tokens": 168,
+    "used": false
+   },
+   {
+    "name": "shipments",
+    "kind": "table",
+    "detail": "20 rows",
+    "est_tokens": 118,
+    "used": false
+   },
+   {
+    "name": "stock_adjustments",
+    "kind": "table",
+    "detail": "15 rows",
+    "est_tokens": 104,
+    "used": false
+   },
+   {
+    "name": "store_managers",
+    "kind": "table",
+    "detail": "8 rows",
+    "est_tokens": 63,
+    "used": false
+   },
+   {
+    "name": "stores",
+    "kind": "table",
+    "detail": "8 rows",
+    "est_tokens": 75,
+    "used": false
+   },
+   {
+    "name": "suppliers",
+    "kind": "table",
+    "detail": "5 rows",
+    "est_tokens": 55,
+    "used": false
+   },
+   {
+    "name": "tax_rates",
+    "kind": "table",
+    "detail": "4 rows",
+    "est_tokens": 21,
+    "used": false
+   },
+   {
+    "name": "user_sessions",
+    "kind": "table",
+    "detail": "30 rows",
+    "est_tokens": 172,
+    "used": false
+   },
+   {
+    "name": "vehicles",
+    "kind": "table",
+    "detail": "6 rows",
+    "est_tokens": 40,
+    "used": false
+   },
+   {
+    "name": "warehouses",
+    "kind": "table",
+    "detail": "3 rows",
+    "est_tokens": 23,
+    "used": false
+   },
+   {
+    "name": "weather_daily",
+    "kind": "table",
+    "detail": "30 rows",
+    "est_tokens": 235,
+    "used": false
+   },
+   {
+    "name": "web_orders",
+    "kind": "table",
+    "detail": "30 rows",
+    "est_tokens": 199,
+    "used": false
+   }
+  ],
+  "total_est_tokens": 29163
+ },
+ "steps": [
+  "Dumped all 50 tables into context (~29,163 tokens).",
+  "Searched names for 'sales': 6 look like sales tables (daily_sales, daily_sales_old, sales_backup_2023, sales_staging, sales_test, sales_tmp).",
+  "Picked sales_backup_2023: biggest 'sales' table, 1,460 rows, so it must be the main one.",
+  "SELECT date, units FROM sales_backup_2023 WHERE category = 'Snacks'",
+  "Compared 30 days before vs after 30 Sep 2023 → −30.7%. Never checked the dates.",
+  "Answered confidently, with the wrong number."
+ ],
+ "wrong_table": "sales_backup_2023",
+ "headline_change_pct": -30.73
+}

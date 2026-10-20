@@ -1,0 +1,11 @@
+node_modules/
+frontend/dist/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/data/demo.db
+backend/data/*.tmp
+backend/data/contexts/
+.vercel
+*.tsbuildinfo

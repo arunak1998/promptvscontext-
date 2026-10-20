@@ -1,0 +1,34 @@
+{
+ "stage": 1,
+ "title": "Weak prompt",
+ "prompt": "Snacks sales ean drop aachu?",
+ "answer_text": "Market conditions-nala irukkalam. Customers selavu kammi pannuranga, competition-um adhigam aagiruchu. Oru chinna offer podunga, sales thirumba yerum.",
+ "answer_source": "captured",
+ "capture_status": "captured",
+ "captured_with": "claude-opus-5-5",
+ "badge": {
+  "label": "Guess",
+  "tone": "red"
+ },
+ "takeaway": "No context, so the AI fills the gap with a confident guess.",
+ "evidence": [],
+ "context": {
+  "sources": [
+   {
+    "name": "prompt",
+    "kind": "prompt",
+    "detail": "Your words",
+    "est_tokens": 7,
+    "used": true
+   }
+  ],
+  "total_est_tokens": 7
+ },
+ "steps": [
+  "Sent only the question (~7 tokens).",
+  "No role, no rules, no data.",
+  "The model filled the gap with a generic, confident-sounding guess."
+ ],
+ "wrong_table": null,
+ "headline_change_pct": null
+}

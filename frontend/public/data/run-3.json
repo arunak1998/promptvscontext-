@@ -1,0 +1,83 @@
+{
+ "stage": 3,
+ "title": "Right context",
+ "prompt": "ROLE: You are a senior retail analyst for a Tamil Nadu supermarket chain.\nTASK: Find out why Snacks sales dropped. Use only the data given to you.\nFORMAT: Exactly 3 points. Each point must contain a number.\nRULES: If you have no data, say you don't know. Do not guess.\nQUESTION: Snacks sales ean drop aachu?",
+ "answer_text": "The Monsoon Munch Fest promo ended on 30 Sep 2026, so Snacks sales dropped ~18%. Same pattern as last quarter.\n1. Snacks averaged 521 units a day from 1 to 30 Sep and 426 units a day from 1 to 15 Oct: a drop of 18.3%.\n2. The promo gave 20% off from 1 Jul to 30 Sep 2026. The drop starts on 1 Oct, the first day without the discount.\n3. After the Summer Crunch Offer ended on 31 Mar 2026, Snacks fell 17.3%. The Q2 2026 report says sales \"fell about 17%\" and then stabilised, with no supply or pricing issue.",
+ "answer_source": "captured",
+ "capture_status": "captured",
+ "captured_with": "claude-opus-5-5",
+ "badge": {
+  "label": "Fact",
+  "tone": "green"
+ },
+ "takeaway": "Right context: 3 sources, real numbers, a real answer.",
+ "evidence": [
+  {
+   "label": "Avg Snacks units/day, 1 Sep to 30 Sep",
+   "value": "521"
+  },
+  {
+   "label": "Avg Snacks units/day, 1 Oct to 15 Oct",
+   "value": "426"
+  },
+  {
+   "label": "Change",
+   "value": "−18.3%"
+  },
+  {
+   "label": "Promo that ended",
+   "value": "Monsoon Munch Fest, 20% off, ended 30 Sep 2026"
+  },
+  {
+   "label": "Drop after Summer Crunch Offer",
+   "value": "−17.3%"
+  },
+  {
+   "label": "Q2 2026 report",
+   "value": "Snacks sales fell about 17% after the Summer Crunch Offer ended on 31 Mar 2026."
+  }
+ ],
+ "context": {
+  "sources": [
+   {
+    "name": "prompt",
+    "kind": "prompt",
+    "detail": "Your words",
+    "est_tokens": 76,
+    "used": true
+   },
+   {
+    "name": "daily_sales",
+    "kind": "table",
+    "detail": "Snacks rows only",
+    "est_tokens": 2182,
+    "used": true
+   },
+   {
+    "name": "promo_calendar",
+    "kind": "table",
+    "detail": "All promos",
+    "est_tokens": 60,
+    "used": true
+   },
+   {
+    "name": "quarterly_report",
+    "kind": "report",
+    "detail": "Past quarter notes",
+    "est_tokens": 146,
+    "used": true
+   }
+  ],
+  "total_est_tokens": 2464
+ },
+ "steps": [
+  "Context: exactly 3 sources (~2,464 tokens).",
+  "SELECT date, units FROM daily_sales WHERE category = 'Snacks'",
+  "SELECT promo_name, end_date FROM promo_calendar WHERE category = 'Snacks' → Monsoon Munch Fest ended 30 Sep 2026",
+  "Avg units/day, 30 days before vs 15 days after 30 Sep 2026 → −18.3%",
+  "Same check after Summer Crunch Offer (31 Mar 2026) → −17.3%",
+  "Matched quarterly_report Q2 2026: \"Snacks sales fell about 17% after the Summer Crunch Offer ended on 31 Mar 2026\""
+ ],
+ "wrong_table": null,
+ "headline_change_pct": -18.27
+}

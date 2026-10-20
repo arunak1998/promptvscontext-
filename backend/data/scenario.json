@@ -1,0 +1,171 @@
+{
+  "_readme": "Edit this file to change the demo data, then run `python scripts/seed.py` and `python scripts/captures.py status`. See README > 'Change the sample data'.",
+  "seed": 42,
+  "question": {
+    "text": "Snacks sales ean drop aachu?",
+    "english": "Why did Snacks sales drop?"
+  },
+  "structured_prompt": [
+    "ROLE: You are a senior retail analyst for a Tamil Nadu supermarket chain.",
+    "TASK: Find out why Snacks sales dropped. Use only the data given to you.",
+    "FORMAT: Exactly 3 points. Each point must contain a number.",
+    "RULES: If you have no data, say you don't know. Do not guess.",
+    "QUESTION: {question}"
+  ],
+  "date_range": { "start": "2026-01-01", "end": "2026-10-15" },
+  "analysis": {
+    "category": "Snacks",
+    "pivot_date": "2026-09-30",
+    "window_days": 30,
+    "expected_drop_pct": { "min": 17.5, "max": 18.5 }
+  },
+  "categories": [
+    { "name": "Snacks", "base_units": 420, "unit_price": 35, "noise_pct": 4 },
+    { "name": "Beverages", "base_units": 380, "unit_price": 45, "noise_pct": 5 },
+    { "name": "Dairy", "base_units": 610, "unit_price": 28, "noise_pct": 3 },
+    { "name": "Bakery", "base_units": 260, "unit_price": 40, "noise_pct": 6 }
+  ],
+  "weekday_factors_mon_to_sun": [0.94, 0.92, 0.95, 0.98, 1.06, 1.12, 1.03],
+  "promos": [
+    {
+      "category": "Snacks",
+      "promo_name": "Summer Crunch Offer",
+      "start_date": "2026-02-01",
+      "end_date": "2026-03-31",
+      "discount_pct": 15,
+      "uplift_pct": 20
+    },
+    {
+      "category": "Beverages",
+      "promo_name": "Cool Drinks Week",
+      "start_date": "2026-04-10",
+      "end_date": "2026-05-10",
+      "discount_pct": 10,
+      "uplift_pct": 12
+    },
+    {
+      "category": "Snacks",
+      "promo_name": "Monsoon Munch Fest",
+      "start_date": "2026-07-01",
+      "end_date": "2026-09-30",
+      "discount_pct": 20,
+      "uplift_pct": 24
+    }
+  ],
+  "quarterly_reports": [
+    {
+      "quarter": "Q1 2026",
+      "category": "Snacks",
+      "template": "Snacks units rose during the Summer Crunch Offer (15% off, Feb to Mar). Margins thinner but basket size up."
+    },
+    {
+      "quarter": "Q2 2026",
+      "category": "Snacks",
+      "about_promo": "Summer Crunch Offer",
+      "template": "Snacks sales fell about {drop_pct}% after the {promo_name} ended on {promo_end}, then stabilised at the pre-promo level. No supply or pricing issue found. Expect the same dip after future Snacks promos."
+    },
+    {
+      "quarter": "Q2 2026",
+      "category": "Beverages",
+      "template": "Beverages lifted during Cool Drinks Week and returned to normal by late May."
+    },
+    {
+      "quarter": "Q2 2026",
+      "category": "Dairy",
+      "template": "Dairy steady. Milk price revision absorbed without volume loss."
+    }
+  ],
+  "decoys": {
+    "sales_test": {
+      "start": "2026-08-01",
+      "end": "2026-10-20",
+      "base_units": 300,
+      "snacks_change_after_pivot_pct": 3,
+      "noise_pct": 2,
+      "expected_change_pct": { "min": 2, "max": 6 }
+    },
+    "sales_backup_2023": {
+      "start": "2023-01-01",
+      "end": "2023-12-31",
+      "pivot_date": "2023-09-30",
+      "base_units": 520,
+      "snacks_drop_after_pivot_pct": 30,
+      "noise_pct": 3,
+      "expected_drop_pct": { "min": 28, "max": 34 }
+    },
+    "small_copies": [
+      { "name": "daily_sales_old", "start": "2025-11-01", "end": "2025-12-31" },
+      { "name": "sales_staging", "start": "2026-10-01", "end": "2026-10-07" },
+      { "name": "sales_tmp", "start": "2026-06-01", "end": "2026-06-10" }
+    ]
+  },
+  "stage4": {
+    "default_trap": "most_rows",
+    "_traps": "most_rows picks the biggest 'sales' table (sales_backup_2023). newest_dates picks the one with the latest date (sales_test)."
+  },
+  "value_pools": {
+    "city": ["Chennai", "Coimbatore", "Madurai", "Trichy", "Salem", "Tirunelveli", "Vellore", "Erode"],
+    "store_name": ["T. Nagar", "Velachery", "Anna Nagar", "Adyar", "Tambaram", "RS Puram", "KK Nagar", "Thillai Nagar"],
+    "name": ["Priya", "Karthik", "Divya", "Arun", "Meena", "Vignesh", "Lakshmi", "Suresh", "Deepa", "Rahul", "Kavya", "Ganesh"],
+    "product_name": ["Masala Chips 90g", "Murukku 200g", "Banana Chips 150g", "Mixture 400g", "Cola 750ml", "Lassi 200ml", "Paneer 200g", "Bun 4pc"],
+    "supplier_name": ["Sri Murugan Foods", "Kaveri Agro", "Coastal Beverages", "Nilgiri Dairy", "Annapoorna Bakers"],
+    "partner_name": ["Dunzo", "Swiggy Genie", "Porter", "Shadowfax"],
+    "region_name": ["Chennai North", "Chennai South", "Kongu", "Madurai Zone"],
+    "method": ["UPI", "Card", "Cash", "Wallet"],
+    "channel": ["Instagram", "YouTube", "Print", "WhatsApp", "Radio"],
+    "tier": ["Silver", "Gold", "Platinum"],
+    "role": ["Cashier", "Floor Staff", "Store Manager", "Stock Keeper"],
+    "status": ["active", "closed", "pending"],
+    "reason": ["damaged", "expired", "wrong item", "customer changed mind"],
+    "event_type": ["app_open", "search", "add_to_cart", "checkout"],
+    "action": ["login", "price_update", "stock_edit", "export"],
+    "competitor": ["MegaMart", "FreshCo", "QuickBasket"],
+    "department": ["Marketing", "Operations", "IT", "HR"],
+    "holiday_name": ["Pongal", "Tamil New Year", "Independence Day", "Vinayagar Chathurthi", "Ayudha Pooja", "Deepavali"],
+    "aisle": ["A1", "A2", "B1", "B2", "C1"]
+  },
+  "filler_tables": [
+    { "name": "stores", "rows": 8, "columns": ["store_id", "store_name", "city", "opened_date"] },
+    { "name": "customers", "rows": 40, "columns": ["customer_id", "name", "city", "joined_date"] },
+    { "name": "products", "rows": 24, "columns": ["product_id", "product_name", "category", "price"] },
+    { "name": "inventory", "rows": 30, "columns": ["product_id", "store_id", "qty_on_hand", "updated_date"] },
+    { "name": "returns", "rows": 18, "columns": ["return_id", "product_id", "qty", "reason", "return_date"] },
+    { "name": "suppliers", "rows": 5, "columns": ["supplier_id", "supplier_name", "city", "rating"] },
+    { "name": "employees", "rows": 24, "columns": ["employee_id", "name", "store_id", "role"] },
+    { "name": "shifts", "rows": 30, "columns": ["shift_id", "employee_id", "shift_date", "hours"] },
+    { "name": "payments", "rows": 40, "columns": ["payment_id", "method", "amount", "payment_date"] },
+    { "name": "loyalty_members", "rows": 25, "columns": ["member_id", "name", "tier", "points"] },
+    { "name": "coupons", "rows": 10, "columns": ["coupon_id", "discount_pct", "valid_from_date", "valid_to_date"] },
+    { "name": "price_changes", "rows": 12, "columns": ["product_id", "old_price", "new_price", "change_date"] },
+    { "name": "shipments", "rows": 20, "columns": ["shipment_id", "supplier_id", "qty", "ship_date"] },
+    { "name": "purchase_orders", "rows": 16, "columns": ["po_id", "supplier_id", "amount", "order_date"] },
+    { "name": "warehouses", "rows": 3, "columns": ["warehouse_id", "city", "capacity"] },
+    { "name": "regions", "rows": 4, "columns": ["region_id", "region_name", "name"] },
+    { "name": "footfall_daily", "rows": 30, "columns": ["store_id", "visit_date", "visitors"] },
+    { "name": "web_orders", "rows": 30, "columns": ["order_id", "customer_id", "amount", "order_date"] },
+    { "name": "app_events", "rows": 30, "columns": ["event_id", "event_type", "event_date", "count"] },
+    { "name": "ad_campaigns", "rows": 8, "columns": ["campaign_id", "channel", "budget", "start_date"] },
+    { "name": "marketing_spend", "rows": 12, "columns": ["month", "channel", "amount"] },
+    { "name": "complaints", "rows": 14, "columns": ["complaint_id", "store_id", "status", "created_date"] },
+    { "name": "feedback_survey", "rows": 25, "columns": ["response_id", "store_id", "rating", "survey_date"] },
+    { "name": "holidays", "rows": 6, "columns": ["holiday_name", "holiday_date", "city"] },
+    { "name": "weather_daily", "rows": 30, "columns": ["weather_date", "city", "temp_c", "rain_mm"] },
+    { "name": "competitor_prices", "rows": 15, "columns": ["product_name", "competitor", "price", "check_date"] },
+    { "name": "product_reviews", "rows": 20, "columns": ["review_id", "product_id", "rating", "review_date"] },
+    { "name": "refunds", "rows": 10, "columns": ["refund_id", "payment_id", "amount", "refund_date"] },
+    { "name": "gift_cards", "rows": 12, "columns": ["card_id", "amount", "issued_date", "status"] },
+    { "name": "delivery_partners", "rows": 4, "columns": ["partner_id", "partner_name", "city", "rating"] },
+    { "name": "vehicles", "rows": 6, "columns": ["vehicle_id", "warehouse_id", "capacity", "status"] },
+    { "name": "energy_usage", "rows": 16, "columns": ["store_id", "month", "kwh"] },
+    { "name": "audit_log", "rows": 30, "columns": ["log_id", "name", "action", "log_date"] },
+    { "name": "user_sessions", "rows": 30, "columns": ["session_id", "customer_id", "minutes", "session_date"] },
+    { "name": "pos_terminals", "rows": 12, "columns": ["terminal_id", "store_id", "status", "installed_date"] },
+    { "name": "shelf_layout", "rows": 16, "columns": ["store_id", "aisle", "category", "shelf_count"] },
+    { "name": "stock_adjustments", "rows": 15, "columns": ["adjustment_id", "product_id", "qty", "reason"] },
+    { "name": "category_targets", "rows": 12, "columns": ["category", "month", "target_units"] },
+    { "name": "budget_2026", "rows": 12, "columns": ["department", "month", "amount"] },
+    { "name": "tax_rates", "rows": 4, "columns": ["category", "gst_pct"] },
+    { "name": "store_managers", "rows": 8, "columns": ["manager_id", "name", "store_id", "since_date"] },
+    { "name": "sales_targets", "rows": 8, "columns": ["region_name", "quarter", "target_amount"] }
+  ]
+}

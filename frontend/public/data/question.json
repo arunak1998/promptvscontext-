@@ -1,0 +1,26 @@
+{
+ "question": "Snacks sales ean drop aachu?",
+ "english": "Why did Snacks sales drop?",
+ "stages": [
+  {
+   "stage": 1,
+   "title": "Weak prompt",
+   "subtitle": "Just the question. No data."
+  },
+  {
+   "stage": 2,
+   "title": "Better prompt",
+   "subtitle": "Role, task, format, rules. Still no data."
+  },
+  {
+   "stage": 3,
+   "title": "Right context",
+   "subtitle": "Same prompt + exactly 3 sources."
+  },
+  {
+   "stage": 4,
+   "title": "Too much context",
+   "subtitle": "Same prompt + all 50 tables."
+  }
+ ]
+}

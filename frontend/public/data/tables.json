@@ -1,0 +1,254 @@
+{
+ "tables": [
+  {
+   "name": "ad_campaigns",
+   "rows": 8,
+   "role": "other"
+  },
+  {
+   "name": "app_events",
+   "rows": 30,
+   "role": "other"
+  },
+  {
+   "name": "audit_log",
+   "rows": 30,
+   "role": "other"
+  },
+  {
+   "name": "budget_2026",
+   "rows": 12,
+   "role": "other"
+  },
+  {
+   "name": "category_targets",
+   "rows": 12,
+   "role": "other"
+  },
+  {
+   "name": "competitor_prices",
+   "rows": 15,
+   "role": "other"
+  },
+  {
+   "name": "complaints",
+   "rows": 14,
+   "role": "other"
+  },
+  {
+   "name": "coupons",
+   "rows": 10,
+   "role": "other"
+  },
+  {
+   "name": "customers",
+   "rows": 40,
+   "role": "other"
+  },
+  {
+   "name": "daily_sales",
+   "rows": 1152,
+   "role": "source"
+  },
+  {
+   "name": "daily_sales_old",
+   "rows": 244,
+   "role": "other"
+  },
+  {
+   "name": "delivery_partners",
+   "rows": 4,
+   "role": "other"
+  },
+  {
+   "name": "employees",
+   "rows": 24,
+   "role": "other"
+  },
+  {
+   "name": "energy_usage",
+   "rows": 16,
+   "role": "other"
+  },
+  {
+   "name": "feedback_survey",
+   "rows": 25,
+   "role": "other"
+  },
+  {
+   "name": "footfall_daily",
+   "rows": 30,
+   "role": "other"
+  },
+  {
+   "name": "gift_cards",
+   "rows": 12,
+   "role": "other"
+  },
+  {
+   "name": "holidays",
+   "rows": 6,
+   "role": "other"
+  },
+  {
+   "name": "inventory",
+   "rows": 30,
+   "role": "other"
+  },
+  {
+   "name": "loyalty_members",
+   "rows": 25,
+   "role": "other"
+  },
+  {
+   "name": "marketing_spend",
+   "rows": 12,
+   "role": "other"
+  },
+  {
+   "name": "payments",
+   "rows": 40,
+   "role": "other"
+  },
+  {
+   "name": "pos_terminals",
+   "rows": 12,
+   "role": "other"
+  },
+  {
+   "name": "price_changes",
+   "rows": 12,
+   "role": "other"
+  },
+  {
+   "name": "product_reviews",
+   "rows": 20,
+   "role": "other"
+  },
+  {
+   "name": "products",
+   "rows": 24,
+   "role": "other"
+  },
+  {
+   "name": "promo_calendar",
+   "rows": 3,
+   "role": "source"
+  },
+  {
+   "name": "purchase_orders",
+   "rows": 16,
+   "role": "other"
+  },
+  {
+   "name": "quarterly_report",
+   "rows": 4,
+   "role": "source"
+  },
+  {
+   "name": "refunds",
+   "rows": 10,
+   "role": "other"
+  },
+  {
+   "name": "regions",
+   "rows": 4,
+   "role": "other"
+  },
+  {
+   "name": "returns",
+   "rows": 18,
+   "role": "other"
+  },
+  {
+   "name": "sales_backup_2023",
+   "rows": 1460,
+   "role": "decoy"
+  },
+  {
+   "name": "sales_staging",
+   "rows": 28,
+   "role": "other"
+  },
+  {
+   "name": "sales_targets",
+   "rows": 8,
+   "role": "other"
+  },
+  {
+   "name": "sales_test",
+   "rows": 324,
+   "role": "decoy"
+  },
+  {
+   "name": "sales_tmp",
+   "rows": 40,
+   "role": "other"
+  },
+  {
+   "name": "shelf_layout",
+   "rows": 16,
+   "role": "other"
+  },
+  {
+   "name": "shifts",
+   "rows": 30,
+   "role": "other"
+  },
+  {
+   "name": "shipments",
+   "rows": 20,
+   "role": "other"
+  },
+  {
+   "name": "stock_adjustments",
+   "rows": 15,
+   "role": "other"
+  },
+  {
+   "name": "store_managers",
+   "rows": 8,
+   "role": "other"
+  },
+  {
+   "name": "stores",
+   "rows": 8,
+   "role": "other"
+  },
+  {
+   "name": "suppliers",
+   "rows": 5,
+   "role": "other"
+  },
+  {
+   "name": "tax_rates",
+   "rows": 4,
+   "role": "other"
+  },
+  {
+   "name": "user_sessions",
+   "rows": 30,
+   "role": "other"
+  },
+  {
+   "name": "vehicles",
+   "rows": 6,
+   "role": "other"
+  },
+  {
+   "name": "warehouses",
+   "rows": 3,
+   "role": "other"
+  },
+  {
+   "name": "weather_daily",
+   "rows": 30,
+   "role": "other"
+  },
+  {
+   "name": "web_orders",
+   "rows": 30,
+   "role": "other"
+  }
+ ]
+}

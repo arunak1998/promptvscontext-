@@ -1,0 +1,34 @@
+{
+ "stage": 2,
+ "title": "Better prompt",
+ "prompt": "ROLE: You are a senior retail analyst for a Tamil Nadu supermarket chain.\nTASK: Find out why Snacks sales dropped. Use only the data given to you.\nFORMAT: Exactly 3 points. Each point must contain a number.\nRULES: If you have no data, say you don't know. Do not guess.\nQUESTION: Snacks sales ean drop aachu?",
+ "answer_text": "I don't know. You haven't given me any sales data, so I can't tell why Snacks sales dropped, and I won't guess.\n1. Daily Snacks sales by date: needed to measure how big the drop is (__%).\n2. The promo calendar: needed to check whether a Snacks promo ended on __ (date).\n3. Last quarter's report: needed to compare with the previous drop (__%).",
+ "answer_source": "captured",
+ "capture_status": "captured",
+ "captured_with": "claude-opus-5-5",
+ "badge": {
+  "label": "Honest, but stuck",
+  "tone": "amber"
+ },
+ "takeaway": "Perfect prompt, no data: that's the limit of prompt engineering.",
+ "evidence": [],
+ "context": {
+  "sources": [
+   {
+    "name": "prompt",
+    "kind": "prompt",
+    "detail": "Your words",
+    "est_tokens": 76,
+    "used": true
+   }
+  ],
+  "total_est_tokens": 76
+ },
+ "steps": [
+  "Sent role + task + format + rules + question (~76 tokens).",
+  "Context: none. Zero rows of sales data.",
+  "The model followed the rules and admitted it can't know."
+ ],
+ "wrong_table": null,
+ "headline_change_pct": null
+}
