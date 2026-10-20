@@ -23,7 +23,7 @@ npm run dev       # open http://localhost:5173
 
 ## Deploy to Vercel
 
-Import the repo in Vercel and deploy. `vercel.json` already tells it to build `frontend/` and serve `frontend/dist`. Nothing else to set.
+Import the repo in Vercel, set **Root Directory** to `frontend` (preset: Vite), and deploy.
 
 ## Regenerating the data (optional, only if you edit scenario.json)
 
